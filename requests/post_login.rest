@@ -1,0 +1,9 @@
+POST  http://localhost:3001/api/login
+Content-Type: application/json
+
+    {
+        "username": "mrTest",
+        "password": "snidma"
+  }
+
+# Requires running `blogs_api.test.js` beforehand
