@@ -1,0 +1,9 @@
+POST http://localhost:3001/api/blogs 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RlciIsImlkIjoiNjcyZGM4NjE2YWRjZmZkZmQwNGRlNjZhIiwiaWF0IjoxNzMxMDY0NTYyfQ.Qg9JJik3KWRuK6ge71cjAF7Z_PZwZi0PRYQKajEY3uw
+
+{
+    "title": "Ten things to do",
+    "author": "Timmy Digits",
+    "url": "www.ample.ex"
+}

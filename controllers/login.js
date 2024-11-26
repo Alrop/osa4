@@ -5,9 +5,7 @@ const jwt = require('jsonwebtoken')
 
 
 loginRouter.post('/', async (req, res) => {
-    console.log("Trying to post login");
     const body = req.body
-    consolelog("Login post ", body)
     const user = await User.findOne({ username: body.username })
     const passwordCorrect = user === null
         ? false
@@ -22,7 +20,7 @@ loginRouter.post('/', async (req, res) => {
         id: user._id,
     }
 
-    const token = jwt.sign(userForToken.toJSON(), process.env.SECRET)
+    const token = jwt.sign(userForToken, process.env.SECRET)
     res
         .status(200)
         .send({ token, username: user.username, name: user.name })

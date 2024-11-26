@@ -13,7 +13,6 @@ blogsRouter.get('/', async (req, res) => {
 blogsRouter.post('/', userExtractor, async (req, res, next) => {
     const body = req.body
     const user = req.user
-    // console.log(user, body)
     const newBlog = new Blog({
         title: body.title,
         author: body.author,
@@ -53,11 +52,6 @@ blogsRouter.delete('/:id', userExtractor, async (req, res, next) => {
     console.log("Start of Del")
     const user = req.user
     const blog = await Blog.findById(req.params.id)
-    // const userBlogs = user.blogs.map(blog => blog.toJSON())
-    // console.log(blog)
-    // console.log(userBlogs)
-    // console.log("Log user: ", user.id);
-    // console.log("delete blogs user id: ", blog.user.toString())
     if (user.id === blog.user.toString()) {
         await Blog.findByIdAndDelete(req.params.id)
         res.status(204).end()
